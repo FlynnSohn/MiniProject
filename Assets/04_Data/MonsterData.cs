@@ -6,12 +6,12 @@ using System;
 [CreateAssetMenu(fileName = "MonsterData", menuName = "Monsters/MonsterData")]
 public class MonsterData : ScriptableObject
 {
-    string monsterName;
-    int maxHp;
+    [SerializeField] private string monsterName;
+    [SerializeField] private int maxHp;
 
-    Sprite monsterImage;
-    List<MonsterPattern> pattern;
-    List<MonsterSkill> skillList;
+    [SerializeField] private Sprite monsterImage;
+    [SerializeField] private List<MonsterPattern> pattern;
+    [SerializeField] private List<MonsterSkill> skillList;
 
     public class MonsterSkill
     {
