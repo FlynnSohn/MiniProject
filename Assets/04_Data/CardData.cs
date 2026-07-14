@@ -29,6 +29,10 @@ public class CardData : ScriptableObject
 
     [SerializeField] private CardRarity cardRarity;
 
+    [SerializeField] private List<IEffectBase> cardEffects = new List<IEffectBase>();
+
+
+
 }
 
 
