@@ -16,7 +16,7 @@ public class DealDamageAction : IEffectAction
     public void Execute()
     {
         // 카드 효과에서 온 데미지를 상대에게 적용.
-        target.TakeDamage(damage);
+        target.DealDamage(damage);
     }
 
 }

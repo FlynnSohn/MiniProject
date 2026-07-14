@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
-  m_Name: CardStrike
+  m_Name: CardBash
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  cardName: "\uD0C0\uACA9"
-  effectDescription: "\uD53C\uD574\uB97C 6 \uC90D\uB2C8\uB2E4."
+  cardName: "\uAC15\uD0C0"
+  effectDescription: "\uD53C\uD574\uB97C 8 \uC90D\uB2C8\uB2E4. \uCDE8\uC57D\uC744
+    2 \uBD80\uC5EC\uD569\uB2C8\uB2E4."
   cardtype: 0
-  energy: 1
+  energy: 2
   exhaustible: 0
   cardRarity: 0
-  cardEffects:
-  - rid: -2
+  cardEffects: []
   references:
     version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    RefIds: []
