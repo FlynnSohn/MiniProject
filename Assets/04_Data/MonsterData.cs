@@ -21,7 +21,6 @@ public class MonsterData : ScriptableObject
 }
 
 // 몬스터 공격도 카드처럼 만들어서 쌓기로 했다.
-// 그런데 구조가 좀 다른 것 같음... 1회 다중행동 * 패턴이니까 Dictionarty가 되어야 하지 않나?
 
 
 
