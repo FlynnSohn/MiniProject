@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231e2a18109fb48548e89773185429c1, type: 3}
+  m_Name: MonsterCeremonialBeast
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  monsterName: "\uC758\uC2DD\uC758 \uC2E0\uC218"
+  maxHp: 252
+  monsterImage: {fileID: 5405315302329496072, guid: b4da492839d15472eaad70af53bfe7f4, type: 3}
+  monsterType: 2
+  monsterPatterns:
+  - {fileID: 11400000, guid: 6b8182a33556943fa8ff485176111250, type: 2}
+  - {fileID: 11400000, guid: c43370d46faca4f87bda4e0c278d7d5c, type: 2}
+  - {fileID: 11400000, guid: 76e7de28d010c4e30ac03e4a8bc4b35d, type: 2}
+  - {fileID: 11400000, guid: 9cf67ae138fae4292ab4a3bb3f714066, type: 2}
+  - {fileID: 11400000, guid: 1a82c031b54594edfa6bf63e33f9dbf0, type: 2}
+  - {fileID: 11400000, guid: dcfe4f67911df45b29637f5f7bb012c2, type: 2}
