@@ -19,3 +19,7 @@ MonoBehaviour:
   energy: 3
   exhaustible: 1
   cardRarity: 3
+  cardEffects: []
+  references:
+    version: 2
+    RefIds: []

@@ -18,3 +18,12 @@ MonoBehaviour:
   energy: 2
   exhaustible: 1
   cardRarity: 3
+  cardEffects:
+  - rid: 1044924472748146911
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146911
+      type: {class: DefendEffect, ns: , asm: Assembly-CSharp}
+      data:
+        defend: 30

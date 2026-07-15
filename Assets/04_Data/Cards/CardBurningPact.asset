@@ -17,4 +17,14 @@ MonoBehaviour:
     \uCE74\uB4DC\uB97C 2\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
   cardtype: 1
   energy: 1
+  exhaustible: 0
   cardRarity: 2
+  cardEffects:
+  - rid: 1044924472748146908
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146908
+      type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
+      data:
+        draw: 2

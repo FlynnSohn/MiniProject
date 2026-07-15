@@ -1,5 +1,8 @@
 using UnityEngine;
+using System;
 
+
+[Serializable]
 public class EnergyEffect : IEffectBase
 {
     [SerializeField] private int energy; // 에너지를 잃을 땐 음수값으로 넣기

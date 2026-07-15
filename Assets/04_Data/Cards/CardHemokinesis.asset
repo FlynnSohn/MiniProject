@@ -17,4 +17,19 @@ MonoBehaviour:
     15 \uC90D\uB2C8\uB2E4."
   cardtype: 0
   energy: 1
+  exhaustible: 0
   cardRarity: 2
+  cardEffects:
+  - rid: 1044924472748146904
+  - rid: 1044924472748146905
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146904
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 2
+    - rid: 1044924472748146905
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15

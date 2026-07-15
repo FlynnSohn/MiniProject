@@ -1,5 +1,8 @@
 using UnityEngine;
+using System;
 
+
+[Serializable]
 public class DrawEffect : IEffectBase
 {
     [SerializeField] private int draw;

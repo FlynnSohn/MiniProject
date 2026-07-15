@@ -19,7 +19,6 @@ public enum CardRarity
 [CreateAssetMenu(fileName = "CardData", menuName = "Card/CardData")]
 public class CardData : ScriptableObject
 {
-
     //[Header("# Main Info")]
     [SerializeField] private string cardName;
     [SerializeField] private string effectDescription;
@@ -29,9 +28,11 @@ public class CardData : ScriptableObject
 
     [SerializeField] private CardRarity cardRarity;
 
-    [SerializeReference] private List<IEffectBase> cardEffects = new List<IEffectBase>();
+    [SerializeReference, SubclassSelector] private List<IEffectBase> cardEffects = new List<IEffectBase>();
     // 카드 효과 종류: 데미지 입히기, 에너지 얻기, 방어력 얻기, 카드 소멸시키기, 카드 뽑기
     // 적용방식: 1회, 이번 턴, 이번 전투 
+
+
     public IReadOnlyList<IEffectBase> CardEffects => cardEffects;
 
 }

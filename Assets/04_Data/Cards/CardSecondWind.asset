@@ -18,4 +18,14 @@ MonoBehaviour:
     \uCE74\uB4DC 1\uC7A5\uB2F9 \uBC29\uC5B4\uB3C4\uB97C 5 \uC5BB\uC2B5\uB2C8\uB2E4."
   cardtype: 1
   energy: 1
+  exhaustible: 0
   cardRarity: 2
+  cardEffects:
+  - rid: 1044924472748146907
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146907
+      type: {class: DefendEffect, ns: , asm: Assembly-CSharp}
+      data:
+        defend: 5

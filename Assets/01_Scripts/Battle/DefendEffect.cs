@@ -1,5 +1,8 @@
 using UnityEngine;
+using System;
 
+
+[Serializable]
 public class DefendEffect : IEffectBase
 {
     [SerializeField] private int defend;

@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-
+[Serializable]
 public class DamageEffect : IEffectBase
 {
     [SerializeField] private int damage;

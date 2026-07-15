@@ -19,3 +19,12 @@ MonoBehaviour:
   energy: 2
   exhaustible: 1
   cardRarity: 3
+  cardEffects:
+  - rid: 1044924472748146912
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146912
+      type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
+      data:
+        draw: 1

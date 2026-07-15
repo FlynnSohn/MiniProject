@@ -19,7 +19,12 @@ MonoBehaviour:
   energy: 2
   exhaustible: 0
   cardRarity: 0
-  cardEffects: []
+  cardEffects:
+  - rid: 1044924472748146898
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1044924472748146898
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 8
