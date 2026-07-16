@@ -35,6 +35,8 @@ public abstract class StatusEffectBase
     public virtual void OnCardPlayed(CardData card, Character owner) { } // 격노, 카드를 사용할 때마다
 
 
+
+    public virtual void CreateInstance(int amount) { }
     // 현재 존재하는 카드 조건들
 
     // 내 턴 시작 시 방어도가 사라지지 않습니다. // ?? 이건 턴 시작할 때 방어도 리셋하는 곳에 찾아가야 할 듯
