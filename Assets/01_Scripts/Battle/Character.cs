@@ -7,7 +7,8 @@ public class Character : MonoBehaviour
     private int currentDefend; // 실시간 방어력
     private int currentEnergy;
 
-    private List<StatusEffect> statusEffects = new();
+    private List<StatusEffectBase> statusEffects = new();
+
 
     public void DealDamage(int amount) { }
     public void GainDefend(int amount) { currentDefend += amount; }
@@ -15,4 +16,12 @@ public class Character : MonoBehaviour
     public void DrawCard(int count) { }
     public void HealHp(int amount) { currentHp += amount; }
     public void ExhaustCard(GameObject card) { }
+    public void AddStatus(StatusEffectBase statusEffect)
+    {
+        statusEffects.Add(statusEffect);
+    }
+    public void RemoveStatus(StatusEffectBase statusEffect)
+    {
+        statusEffects.Remove(statusEffect);
+    }
 }
