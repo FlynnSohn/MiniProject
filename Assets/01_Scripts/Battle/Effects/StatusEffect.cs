@@ -17,6 +17,6 @@ public class StatusEffect : IEffectBase
     [SerializeField] StatusType statusType;
     public IEffectAction Set(Character source, Character target)
     {
-        return new ChangeStatusAction(source, target, statusType, stack);
+        return new ChangeStatusAction(target, statusType, stack);
     }
 }

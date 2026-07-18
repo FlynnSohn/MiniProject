@@ -7,9 +7,8 @@ public class ChangeStatusAction : IEffectAction
     private StatusType statusType;
     private int amount;
 
-    public ChangeStatusAction(Character _source, Character _target, StatusType _statusType, int _amount)
+    public ChangeStatusAction(Character _target, StatusType _statusType, int _amount)
     {
-        source = _source;
         target = _target;
         statusType = _statusType;
         amount = _amount;
@@ -17,9 +16,15 @@ public class ChangeStatusAction : IEffectAction
 
     public void Execute()
     {
-        // StatusEffectBase newStatusEffect = statusEffect.CreateInstance(amount); // 추상클래스 인스턴스 만들기
-        // source.AddStatus(newStatusEffect);
-        // target.AddStatus(newStatusEffect);
+        StatusEffectBase status = statusType switch
+        {
+            StatusType.Vulnerable => new VulnerableStatus(amount),
+            StatusType.Strength => new StrengthStatus(amount),
+            StatusType.Weak => new WeakStatus(amount),
+            //StatusType.Poison => new PoisonStatus(amount),
+            _ => null
+        };
+        target.AddStatus(status);
     }
 
 }
