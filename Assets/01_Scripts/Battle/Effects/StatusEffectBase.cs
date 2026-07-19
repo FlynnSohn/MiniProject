@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class StatusEffectBase
 {
     public int Stack { get; protected set; }
+    public void AddStack(int amount) => Stack += amount;
+
     // 게임 내내 영구 적용 
 
     // 해당 전투 동안 영구 적용 -> 그냥 9999턴으로 고정하자.
@@ -36,7 +38,6 @@ public abstract class StatusEffectBase
 
 
 
-    public virtual void CreateInstance(int amount) { }
     // 현재 존재하는 카드 조건들
 
     // 내 턴 시작 시 방어도가 사라지지 않습니다. // ?? 이건 턴 시작할 때 방어도 리셋하는 곳에 찾아가야 할 듯
@@ -58,6 +59,8 @@ public abstract class StatusEffectBase
     // 방어도를 12 얻습니다. 이번 턴에 공격을 받을 때마다, 공격한 적에게 피해를 4 줍니다. // OnOwnerAttacked
 
     // 체력을 2 잃습니다. 피해를 15 줍니다.
+
+    //방어도를 30 얻습니다. 소멸. 
 
     // 체력을 6 잃습니다. 에너지 2를 얻습니다. 카드를 3장 뽑습니다. 소멸.
 

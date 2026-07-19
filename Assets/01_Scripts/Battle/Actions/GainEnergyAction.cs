@@ -17,6 +17,6 @@ public class GainEnergyAction : IEffectAction
 
     public void Execute()
     {
-        target.GainEnergy(energy);
+        source.GainEnergy(energy);
     }
 }

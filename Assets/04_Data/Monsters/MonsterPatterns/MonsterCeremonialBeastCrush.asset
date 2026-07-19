@@ -14,13 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterPatternData
   monsterEffectPatterns:
   - rid: 1044924472748146934
-  - rid: -2
+  - rid: 1044924472748146940
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 1044924472748146934
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
         damage: 17
+        scope: 0
+    - rid: 1044924472748146940
+      type: {class: StatusEffect, ns: , asm: Assembly-CSharp}
+      data:
+        stack: 3
+        statusType: 0
+        scope: 0

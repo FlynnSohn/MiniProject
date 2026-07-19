@@ -1,5 +1,9 @@
 using UnityEngine;
-
+public enum TargetScope
+{
+    Self = 0,
+    Target = 1
+}
 public interface IEffectBase
 {
     IEffectAction Set(Character source, Character target);

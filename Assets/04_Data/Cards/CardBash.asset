@@ -21,6 +21,7 @@ MonoBehaviour:
   cardRarity: 0
   cardEffects:
   - rid: 1044924472748146898
+  - rid: 1044924472748146937
   references:
     version: 2
     RefIds:
@@ -28,3 +29,10 @@ MonoBehaviour:
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
         damage: 8
+        scope: 1
+    - rid: 1044924472748146937
+      type: {class: StatusEffect, ns: , asm: Assembly-CSharp}
+      data:
+        stack: 2
+        statusType: 1
+        scope: 1

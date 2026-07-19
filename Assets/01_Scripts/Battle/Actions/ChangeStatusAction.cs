@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class ChangeStatusAction : IEffectAction
 {
-    private Character source;
     private Character target;
     private StatusType statusType;
     private int amount;
@@ -22,7 +22,7 @@ public class ChangeStatusAction : IEffectAction
             StatusType.Strength => new StrengthStatus(amount),
             StatusType.Weak => new WeakStatus(amount),
             //StatusType.Poison => new PoisonStatus(amount),
-            _ => null
+            _ => throw new NotImplementedException($"상태이상 구현 필요 {statusType}")
         };
         target.AddStatus(status);
     }

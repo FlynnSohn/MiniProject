@@ -29,7 +29,9 @@ MonoBehaviour:
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
         damage: 2
+        scope: 0
     - rid: 1044924472748146905
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
         damage: 15
+        scope: 1
