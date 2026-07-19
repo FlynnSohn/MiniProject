@@ -1,4 +1,4 @@
-using UnityEngine;
+
 
 public class GainDefendAction : IEffectAction
 {
@@ -16,7 +16,8 @@ public class GainDefendAction : IEffectAction
 
     public void Execute()
     {
-        target.GainDefend(defend);
+        int finalDefend = DefendCalculator.Calculate(source, defend);
+        source.GainDefend(finalDefend);
     }
 
 }

@@ -1,16 +1,9 @@
-using UnityEngine;
 
-public class DefendCalculator : MonoBehaviour
+public static class DefendCalculator
 {
-
-    void Start()
+    public static int Calculate(Character owner, int baseDefend)
     {
-        
+        return owner.EffectAppliedDefendGained(baseDefend);
     }
 
-
-    void Update()
-    {
-        
-    }
 }

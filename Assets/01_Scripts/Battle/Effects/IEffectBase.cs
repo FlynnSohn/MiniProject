@@ -1,4 +1,4 @@
-using UnityEngine;
+
 public enum TargetScope
 {
     Self = 0,

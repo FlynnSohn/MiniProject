@@ -1,4 +1,4 @@
-using UnityEngine;
+
 
 public class DealDamageAction : IEffectAction
 {
@@ -15,8 +15,9 @@ public class DealDamageAction : IEffectAction
     }
     public void Execute()
     {
+        int finalDamage = DamageCalculator.Calculate(source, target, damage);
         // 카드 효과에서 온 데미지를 상대에게 적용.
-        target.DealDamage(damage);
+        target.DealDamage(finalDamage);
     }
 
 }
