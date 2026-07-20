@@ -30,28 +30,65 @@ public class Character : MonoBehaviour
     }
 
     // 딜량, 방어력 등에 현재 적용된 상태이상 값 반영하는 함수 3개
-    public int EffectAppliedDamageDealt(int dmg)
+    // public int EffectAppliedDamageDealt(int dmg)
+    // {
+    //     foreach (var s in statusEffects)
+    //     {
+    //         dmg = s.ChangeDamageDealing(dmg);
+    //     }
+    //     return dmg;
+    // }
+    // public int EffectAppliedDamageReceived(int dmg)
+    // {
+    //     foreach (var s in statusEffects)
+    //     {
+    //         dmg = s.ChangeDamageReceived(dmg);
+    //     }
+    //     return dmg;
+    // }
+    // public int EffectAppliedDefendGained(int defend)
+    // {
+    //     foreach (var s in statusEffects)
+    //     {
+    //         defend = s.ChangeDefendGained(defend);
+    //     }
+    //     return defend;
+    // }
+
+    public int SumDamageDealtBonus()
     {
-        foreach (var s in statusEffects)
-        {
-            dmg = s.ChangeDamageDealing(dmg);
-        }
-        return dmg;
+        int sum = 0;
+        foreach (var s in statusEffects) sum += s.GetDamageDealtBonus();
+        return sum;
     }
-    public int EffectAppliedDamageReceived(int dmg)
+    public float TotalDamageDealtMultiplier()
     {
-        foreach (var s in statusEffects)
-        {
-            dmg = s.ChangeDamageReceived(dmg);
-        }
-        return dmg;
+        float total = 1f;
+        foreach (var s in statusEffects) total *= s.GetDamageDealtMultiplier();
+        return total;
     }
-    public int EffectAppliedDefendGained(int defend)
+    public int SumDamageReceivedBonus()
     {
-        foreach (var s in statusEffects)
-        {
-            defend = s.ChangeDefendGained(defend);
-        }
-        return defend;
+        int sum = 0;
+        foreach (var s in statusEffects) sum += s.GetDamageReceivedBonus();
+        return sum;
+    }
+    public float TotalDamageReceivedMultiplier()
+    {
+        float total = 1f;
+        foreach (var s in statusEffects) total *= s.GetDamageReceivedMultiplier();
+        return total;
+    }
+    public int SumDefendGainedBonus()
+    {
+        int sum = 0;
+        foreach (var s in statusEffects) sum += s.GetDefendGainedBonus();
+        return sum;
+    }
+    public float TotalDefendGainedMultiplier()
+    {
+        float total = 1f;
+        foreach (var s in statusEffects) total *= s.GetDefendGainedMultiplier();
+        return total;
     }
 }

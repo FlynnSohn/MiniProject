@@ -26,10 +26,16 @@ public abstract class StatusEffectBase
     public virtual void OnTurnStart(Character owner) { } // 중독 실행, 취약 카운트 감소 등
     public virtual void OnTurnEnd(Character owner) { } // 조건이 '이번 턴만'인 것들의 효과를 제거
 
-    // 값을 더하고 빼는 거
-    public virtual int ChangeDamageDealing(int dmg) => dmg; // 내 공격력에 영향주는거, 힘/약화
-    public virtual int ChangeDamageReceived(int dmg) => dmg; // 더 쎄게맞는거 취약 vulnerable
-    public virtual int ChangeDefendGained(int defend) => defend; // 민첩, 방어덜들어오는거
+
+    // 값을 더하는거 -> 힘 민첩 등
+    public virtual int GetDamageDealtBonus() => 0; // 힘
+    public virtual int GetDamageReceivedBonus() => 0; // 이건 지금 안 쓰는듯
+    public virtual int GetDefendGainedBonus() => 0; // 민첩
+
+    // 값을 곱하는거 -> 약화 취약 등
+    public virtual float GetDamageDealtMultiplier() => 1f; // 약화
+    public virtual float GetDamageReceivedMultiplier() => 1f; // 취약
+    public virtual float GetDefendGainedMultiplier() => 1f; // 이것도 지금 안 쓰는듯
 
     // 조건부
     public virtual void OnCardExhausted(Character owner) { } // 카드 소멸 조건부 어둠의 포옹 등

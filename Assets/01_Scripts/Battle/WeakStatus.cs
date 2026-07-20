@@ -8,7 +8,8 @@ public class WeakStatus : StatusEffectBase
     {
         Stack = amount;
     }
-    public override int ChangeDamageDealing(int dmg) => (int)(dmg * 0.75); // 내 공격력에 영향주는거, 힘/약화
+    //public override int ChangeDamageDealing(int dmg) => (int)(dmg * 0.75); // 내 공격력에 영향주는거, 힘/약화
+    public override float GetDamageDealtMultiplier() => 0.75f;
     public override void OnTurnStart(Character owner)
     {
         Stack--;
