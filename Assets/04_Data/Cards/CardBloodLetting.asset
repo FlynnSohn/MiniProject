@@ -20,16 +20,17 @@ MonoBehaviour:
   exhaustible: 0
   cardRarity: 1
   cardEffects:
-  - rid: 1044924472748146913
+  - rid: 1044924472748146941
   - rid: 1044924472748146914
   references:
     version: 2
     RefIds:
-    - rid: 1044924472748146913
-      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
-      data:
-        damage: 3
     - rid: 1044924472748146914
       type: {class: EnergyEffect, ns: , asm: Assembly-CSharp}
       data:
         energy: 2
+    - rid: 1044924472748146941
+      type: {class: LoseHpEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 3
+        scope: 0

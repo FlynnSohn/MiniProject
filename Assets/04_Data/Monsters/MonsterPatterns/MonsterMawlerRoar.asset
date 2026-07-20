@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: MonsterMawlerRoar
   m_EditorClassIdentifier: Assembly-CSharp::MonsterPatternData
   monsterEffectPatterns:
-  - rid: -2
+  - rid: 1044924472748146944
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 1044924472748146944
+      type: {class: StatusEffect, ns: , asm: Assembly-CSharp}
+      data:
+        stack: 3
+        statusType: 1
+        scope: 1
