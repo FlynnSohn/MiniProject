@@ -16,7 +16,7 @@ public class GainDefendAction : IEffectAction
 
     public void Execute()
     {
-        int finalDefend = DefendCalculator.Calculate(source, target, defend);
+        int finalDefend = DefendCalculator.Calculate(source, defend);
         source.GainDefend(finalDefend);
     }
 

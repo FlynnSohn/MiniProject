@@ -6,7 +6,7 @@ using System;
 public class DefendEffect : IEffectBase
 {
     [SerializeField] private int defend;
-    [SerializeField] private TargetScope scope;
+    [SerializeField] private TargetScope scope; // 이것도 필요할까? 
     public IEffectAction Set(Character source, Character target)
     {
         Character receiver = (scope == TargetScope.Self) ? source : target;

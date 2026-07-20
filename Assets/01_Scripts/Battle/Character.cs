@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
 
 
     public void DealDamage(int amount) { }
+    public void LoseHp(int amount) { }
     public void GainDefend(int amount) { currentDefend += amount; }
     public void GainEnergy(int amount) { currentEnergy += amount; }
     public void DrawCard(int count) { }
