@@ -3,43 +3,41 @@ using System.Collections.Generic;
 
 public class Character : MonoBehaviour
 {
+    protected int maxHp;
     protected int currentHp;
     protected int currentDefend = 0; // 실시간 방어력
-    protected int currentEnergy; // 플레이어만 쓰는 속성
+    protected int currentEnergy;
+
+
+    public bool IsDead => currentHp <= 0;
 
     private List<StatusEffectBase> statusEffects = new();
 
     public void DealDamage(int amount)
     {
-        // 타겟.DealDamage(최종 데미지) 가 실행될 것이다.
-        // 그럼 해야 할 것
-        // target의 방어를 amount만큼 제거하기
-        // 그다음에 amount에서 최초 저장해둔 방어값 빼기 아 좀더 예쁜 식 없나
-        // amount>0이면 target의 hp를 amount만큼 깎기
-        // target의 체력이 0 이하가 되면 게임오브젝트 파괴
 
-        // target의 방어가 amount보다 큰지 작은지 계산하고
-        // 방어가 작으면 amount에서 방어를 뺀 다음 방어를 0으로 만들고 hp에서 amount를 뺌
-        // 방어가 크거나 같으면 방어에서 amount를 뺀 다음 끝
-        // target의 체력이 0 이하가 되면 죽음 연출 재생되고 게임오브젝트 파괴...
-        if (currentDefend < amount)
-        {
-            amount -= currentDefend;
-            currentDefend = 0;
-            currentHp -= amount;
-        }
-        else
-        {
-            currentDefend -= amount;
-        }
-        if (currentHp <= 0) Die();
+        int blocked = Mathf.Min(currentDefend, amount);
+        currentDefend -= blocked;
+        //currentHp -= (amount - blocked);
+        currentHp = Mathf.Max(currentHp - (amount - blocked), 0);
+
     }
-    public void LoseHp(int amount) { }
-    public void GainDefend(int amount) { currentDefend += amount; }
-    public void GainEnergy(int amount) { currentEnergy += amount; }
+    public void LoseHp(int amount)
+    {
+        currentHp = Mathf.Max(currentHp - amount, 0);
+    }
+    public void HealHp(int amount)
+    {
+        currentHp = Mathf.Min(currentHp + amount, maxHp);
+    }
     public void DrawCard(int count) { }
-    public void HealHp(int amount) { currentHp += amount; }
     public void ExhaustCard(GameObject card) { }
+    public void GainDefend(int amount)
+    {
+        currentDefend += amount;
+    }
+    public void GainEnergy(int amount) { currentEnergy += amount; }
+
 
     // 적용된 상태이상에 동일 상태이상이 있는지 확인해 있으면 스택 값을 더하고 없으면 상태이상을 추가
     public void AddStatus(StatusEffectBase newStatus)
@@ -97,3 +95,6 @@ public class Character : MonoBehaviour
         return total;
     }
 }
+
+
+

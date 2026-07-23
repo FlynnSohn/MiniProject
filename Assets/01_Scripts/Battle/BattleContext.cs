@@ -1,19 +1,16 @@
 using UnityEngine;
 
-public class Monster : Character
+public class BattleContext : MonoBehaviour
 {
-    void Awake()
-    {
-        //maxHp = 
-    }
+
     void Start()
     {
-
+        
     }
 
 
     void Update()
     {
-
+        
     }
 }

@@ -1,11 +1,8 @@
 using UnityEngine;
 
-public class Monster : Character
+public class Deck : MonoBehaviour
 {
-    void Awake()
-    {
-        //maxHp = 
-    }
+
     void Start()
     {
 
