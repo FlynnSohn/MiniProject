@@ -13,7 +13,7 @@ public class DealDamageAction : IEffectAction
         target = _target;
         damage = _damage;
     }
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         int finalDamage = DamageCalculator.Calculate(source, target, damage);
         // 카드 효과에서 온 데미지를 상대에게 적용.

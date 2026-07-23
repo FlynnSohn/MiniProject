@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BattleContext : MonoBehaviour
+public class Enemies : MonoBehaviour
 {
 
     void Start()

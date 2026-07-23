@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IEffectAction
 {
-    void Execute();
+    void Execute(BattleContext ctx);
 }

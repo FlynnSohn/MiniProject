@@ -14,7 +14,7 @@ public class ChangeStatusAction : IEffectAction
         amount = _amount;
     }
 
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         StatusEffectBase status = statusType switch
         {
