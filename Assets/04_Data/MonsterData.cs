@@ -18,6 +18,12 @@ public class MonsterData : ScriptableObject
     [SerializeField] private MonsterType monsterType;
     [SerializeField] private List<MonsterPatternData> monsterPatterns = new();
 
+    public string MonsterName => monsterName;
+    public int MaxHp => maxHp;
+    public Sprite MonsterImage => monsterImage;
+    public MonsterType MonsterType => monsterType;
+    public IReadOnlyList<MonsterPatternData> MonsterPatterns => monsterPatterns;
+
 }
 
 // 몬스터 공격도 카드처럼 만들어서 쌓기로 했다.

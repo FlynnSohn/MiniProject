@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RunState : MonoBehaviour
+public class MonsterView : MonoBehaviour
 {
 
     void Start()

@@ -5,19 +5,23 @@ public class Player : Character
 
     protected int maxEnergy;
 
-    void Awake()
+
+    // void Awake()
+    // {
+
+    // }
+    // void Start()
+    // {
+
+    // }
+    public void Init(RunState state)
     {
-        maxHp = 80;
+        int playerCurrentHp = Mathf.Clamp(state.CurrentHp, 0, state.MaxHp);
+        InitStats(state.MaxHp, playerCurrentHp);
         maxEnergy = 3;
-        currentHp = maxHp;
         currentEnergy = maxEnergy;
-        currentDefend = 0;
-    }
-    void Start()
-    {
 
     }
-
 
 
     public override void Die()
