@@ -14,7 +14,7 @@ public class GainDefendAction : IEffectAction
         defend = _defend;
     }
 
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         int finalDefend = DefendCalculator.Calculate(source, defend);
         source.GainDefend(finalDefend);

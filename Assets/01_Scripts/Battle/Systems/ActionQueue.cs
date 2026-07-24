@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BattleContext : MonoBehaviour
+public class ActionQueue : MonoBehaviour
 {
 
     void Start()

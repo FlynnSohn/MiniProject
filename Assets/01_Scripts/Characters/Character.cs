@@ -12,6 +12,14 @@ public class Character : MonoBehaviour
     public bool IsDead => currentHp <= 0;
 
     private List<StatusEffectBase> statusEffects = new();
+    //public IReadOnlyList<StatusEffectBase> StatusEffects => statusEffects;
+    protected void InitStats(int _maxHp, int _currentHp)
+    {
+        maxHp = _maxHp;
+        currentHp = _currentHp;
+        statusEffects.Clear();
+        currentDefend = 0;
+    }
 
     public void DealDamage(int amount)
     {

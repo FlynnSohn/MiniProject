@@ -13,7 +13,7 @@ public class HealHpAction : IEffectAction
         target = _target;
         hp = _hp;
     }
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         target.HealHp(hp);
     }

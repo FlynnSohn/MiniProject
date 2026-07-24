@@ -14,7 +14,7 @@ public class DrawCardAction : IEffectAction
         draw = _draw;
     }
 
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         target.DrawCard(draw);
     }

@@ -14,7 +14,7 @@ public class LoseHpAction : IEffectAction
         amount = _amount;
     }
 
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         source.LoseHp(amount);
     }

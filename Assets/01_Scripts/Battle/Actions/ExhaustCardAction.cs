@@ -14,7 +14,7 @@ public class ExhaustCardAction : IEffectAction
         target = _target;
         card = _card;
     }
-    public void Execute()
+    public void Execute(BattleContext ctx)
     {
         target.ExhaustCard(card);
     }
