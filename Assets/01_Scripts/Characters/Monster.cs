@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
+
 
 public class Monster : Character
 {
@@ -13,26 +13,37 @@ public class Monster : Character
     [SerializeField] TextMeshProUGUI hpText;
     private SpriteRenderer sr;
     private BoxCollider2D monsterCollider;
-    MonsterData monsterData;
-    public void Init(MonsterData data)
-    {
-        monsterData = data;
-        // this.InitStats(data.MaxHp, data.MaxHp);
-        // monsterPatternData = data.MonsterPatterns;
-        this.InitStats(monsterData.MaxHp, monsterData.MaxHp);
-        monsterPatternData = monsterData.MonsterPatterns;
-        hpText.text = currentHp.ToString();
-        //nameText.text = data.MonsterName;
-        nameText.text = monsterData.MonsterName;
-        patternIndex = 0;
 
-    }
     void Awake()
     {
-        sr = monsterData.GetComponent<SpriteRenderer>();
-        monsterCollider.size = monsterData.MonsterImage.bounds.size;
+        sr = GetComponent<SpriteRenderer>();
         monsterCollider = GetComponent<BoxCollider2D>();
+    }
+    public void Init(MonsterData data)
+    {
+
+        InitStats(data.MaxHp, data.MaxHp);
+        monsterPatternData = data.MonsterPatterns;
+        patternIndex = 0;
+
+        sr.sprite = data.MonsterImage;
+        monsterCollider.size = data.MonsterImage.bounds.size;
+
+        nameText.text = data.MonsterName;
+        RefreshHpText();
+
+    }
+
+    /// <summary>
+    /// 외부(BattleSetup)에서 지정하는 것들
+    /// </summary>
+    public void RefreshHpText()
+    {
+        hpText.text = (currentHp / maxHp).ToString();
     }
 
 
+    public void SetSortingOrder(int order) => sr.sortingOrder = order;
+
+    public override void Die() => gameObject.SetActive(false);
 }
