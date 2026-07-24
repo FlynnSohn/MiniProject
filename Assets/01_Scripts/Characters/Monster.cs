@@ -41,9 +41,6 @@ public class Monster : Character
     {
         hpText.text = (currentHp / maxHp).ToString();
     }
-
-
     public void SetSortingOrder(int order) => sr.sortingOrder = order;
-
     public override void Die() => gameObject.SetActive(false);
 }
