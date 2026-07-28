@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: "\uACA9\uB178"
   effectDescription: "\uC774\uBC88 \uD134\uC5D0 \uACF5\uACA9 \uCE74\uB4DC\uB97C \uC0AC\uC6A9\uD560
     \uB54C\uB9C8\uB2E4, \uBC29\uC5B4\uB3C4\uB97C 3 \uC5BB\uC2B5\uB2C8\uB2E4."
-  cardtype: 1
+  cardType: 1
   energy: 0
   exhaustible: 0
   cardRarity: 2
@@ -28,3 +28,4 @@ MonoBehaviour:
       type: {class: DefendEffect, ns: , asm: Assembly-CSharp}
       data:
         defend: 3
+        scope: 0

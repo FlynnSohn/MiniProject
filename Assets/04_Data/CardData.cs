@@ -22,7 +22,7 @@ public class CardData : ScriptableObject
     //[Header("# Main Info")]
     [SerializeField] private string cardName;
     [SerializeField] private string effectDescription;
-    [SerializeField] private CardType cardtype;
+    [SerializeField] private CardType cardType;
     [SerializeField] private int energy;
     [SerializeField] private bool exhaustible;
 

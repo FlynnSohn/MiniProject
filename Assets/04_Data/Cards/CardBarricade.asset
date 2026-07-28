@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: "\uBC14\uB9AC\uCF00\uC774\uB4DC"
   effectDescription: "\uB0B4 \uD134 \uC2DC\uC791 \uC2DC \uBC29\uC5B4\uB3C4\uAC00
     \uC0AC\uB77C\uC9C0\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
-  cardtype: 2
+  cardType: 1
   energy: 3
   exhaustible: 1
   cardRarity: 3

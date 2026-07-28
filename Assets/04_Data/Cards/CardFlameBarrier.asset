@@ -16,7 +16,7 @@ MonoBehaviour:
   effectDescription: "\uBC29\uC5B4\uB3C4\uB97C 12 \uC5BB\uC2B5\uB2C8\uB2E4. \uC774\uBC88
     \uD134\uC5D0 \uACF5\uACA9\uC744 \uBC1B\uC744 \uB54C\uB9C8\uB2E4, \uACF5\uACA9\uD55C
     \uC801\uC5D0\uAC8C \uD53C\uD574\uB97C 4 \uC90D\uB2C8\uB2E4."
-  cardtype: 1
+  cardType: 1
   energy: 2
   exhaustible: 0
   cardRarity: 2
@@ -29,3 +29,4 @@ MonoBehaviour:
       type: {class: DefendEffect, ns: , asm: Assembly-CSharp}
       data:
         defend: 12
+        scope: 0

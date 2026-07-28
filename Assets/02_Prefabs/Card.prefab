@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 1537836816168051089}
   - component: {fileID: 463988810039038896}
   - component: {fileID: 4136010905583861164}
+  - component: {fileID: 3090186231523135088}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -1102,6 +1103,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.2, y: 8.76}
   m_EdgeRadius: 0
+--- !u!114 &3090186231523135088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367193561554351255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2802651c91fc14753bd8e1d788814d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardView
+  cardImageSr: {fileID: 3734436141580373552}
+  cardFrameSr: {fileID: 2080282333427645537}
+  cardBorderSr: {fileID: 2686990635853369496}
+  cardTypeSr: {fileID: 6705762667000124812}
+  cardNameText: {fileID: 1288677305414746331}
+  cardEffectText: {fileID: 2459690498500506468}
+  cardTypeText: {fileID: 9100519789211231160}
+  cardEnergyText: {fileID: 8462082262234616988}
 --- !u!1 &6550012743534373091
 GameObject:
   m_ObjectHideFlags: 0
