@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: "\uC218\uBE44"
   effectDescription: "\uBC29\uC5B4\uB3C4\uB97C 5 \uC5BB\uC2B5\uB2C8\uB2E4."
   cardType: 1
-  energy: 1
-  exhaustible: 0
+  cost: 1
+  destination: 0
   cardRarity: 0
   cardEffects:
   - rid: 1044924472748146899

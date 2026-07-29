@@ -9,7 +9,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] private float spacing = 4f;
     [SerializeField] private Vector2 centerPos = new(4f, -0.5f);
     [SerializeField] private int baseSortingOrder = 300;
-    [SerializeField] private Deck deck;
+
 
     private CardPiles cardPiles;
 
@@ -22,8 +22,11 @@ public class BattleSetup : MonoBehaviour
 
         player.Init(GameManager.instance.Run);
         SpawnMonsters(GameManager.instance.Run.MonsterIndex);
+        // deck init 필요
 
-        cardPiles = new CardPiles(deck, 5);
+        Deck deck = GameManager.instance.Run.Deck;
+
+        cardPiles = new CardPiles(deck);
 
     }
 

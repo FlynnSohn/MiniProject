@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: "\uBAB8\uD1B5 \uBC15\uCE58\uAE30"
   effectDescription: "\uBC29\uC5B4\uB3C4\uB9CC\uD07C\uC758 \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
-  cardtype: 0
-  energy: 1
-  exhaustible: 0
+  cardType: 0
+  cost: 1
+  destination: 0
   cardRarity: 1
   cardEffects:
   - rid: 1044924472748146915

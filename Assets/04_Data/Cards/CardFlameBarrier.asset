@@ -17,8 +17,8 @@ MonoBehaviour:
     \uD134\uC5D0 \uACF5\uACA9\uC744 \uBC1B\uC744 \uB54C\uB9C8\uB2E4, \uACF5\uACA9\uD55C
     \uC801\uC5D0\uAC8C \uD53C\uD574\uB97C 4 \uC90D\uB2C8\uB2E4."
   cardType: 1
-  energy: 2
-  exhaustible: 0
+  cost: 2
+  destination: 0
   cardRarity: 2
   cardEffects:
   - rid: 1044924472748146916

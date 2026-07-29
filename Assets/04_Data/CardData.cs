@@ -16,17 +16,33 @@ public enum CardRarity
     Uncommon = 2,
     Rare = 3
 }
+
+public enum CardDestination
+{
+    Discard = 0,
+    Exhaust = 1,
+    Removed = 2
+}
+
 [CreateAssetMenu(fileName = "CardData", menuName = "Card/CardData")]
 public class CardData : ScriptableObject
 {
-    //[Header("# Main Info")]
+    [Header("# Main Info")]
     [SerializeField] private string cardName;
     [SerializeField] private string effectDescription;
     [SerializeField] private CardType cardType;
-    [SerializeField] private int energy;
-    [SerializeField] private bool exhaustible;
-
+    [SerializeField] private int cost;
+    [SerializeField] private CardDestination destination;
     [SerializeField] private CardRarity cardRarity;
+
+    public string CardName => cardName;
+    public string EffectDescription => effectDescription;
+    public CardType CardType => cardType;
+    public int Cost => cost;
+    public CardDestination Destination => destination;
+    public CardRarity CardRarity => cardRarity;
+
+
 
     [SerializeReference, SubclassSelector] private List<IEffectBase> cardEffects = new List<IEffectBase>();
     // 카드 효과 종류: 데미지 입히기, 에너지 얻기, 방어력 얻기, 카드 소멸시키기, 카드 뽑기

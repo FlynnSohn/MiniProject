@@ -3,6 +3,7 @@
 public class Card
 {
     public CardData Data { get; }
+    public int Cost => Data.Cost;
 
 
     // private readonly string cardName;
@@ -12,6 +13,7 @@ public class Card
     // private readonly bool exhaustible;
     // private readonly CardRarity cardRarity;
 
+    // 한 단계 거쳐서 생성
     public Card(CardData data) => Data = data;
 }
 

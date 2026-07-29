@@ -3900,6 +3900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a646a50e26384c5eaacd521aade520c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  strikeCard: {fileID: 11400000, guid: 2cc9a150e1f5e43de8f120822386eb85, type: 2}
+  defendCard: {fileID: 11400000, guid: 2730bd82838e44010afee15dbcac43b9, type: 2}
+  cardDataList: {fileID: 11400000, guid: dce593514c5a048b79d966382b5aef1d, type: 2}
 --- !u!4 &1966289176
 Transform:
   m_ObjectHideFlags: 0
