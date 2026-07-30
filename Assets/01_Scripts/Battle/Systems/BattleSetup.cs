@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class BattleSetup : MonoBehaviour
@@ -5,6 +6,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] private Monster monsterPrefab;
     [SerializeField] private MonsterSequence monsterSequence;
     [SerializeField] private Player player;
+    [SerializeField] private TurnManager turnManager;
 
     [SerializeField] private float spacing = 4f;
     [SerializeField] private Vector2 centerPos = new(4f, -0.5f);
@@ -14,6 +16,7 @@ public class BattleSetup : MonoBehaviour
     private CardPiles cardPiles;
 
     public Enemies Enemies { get; private set; }
+    public BattleContext Ctx { get; private set; }
 
     private void Start() => Setup();
     void Setup()
@@ -22,12 +25,11 @@ public class BattleSetup : MonoBehaviour
 
         player.Init(GameManager.instance.Run);
         SpawnMonsters(GameManager.instance.Run.MonsterIndex);
-        // deck init 필요
 
-        Deck deck = GameManager.instance.Run.Deck;
+        cardPiles = new CardPiles(GameManager.instance.Run.Deck);
 
-        cardPiles = new CardPiles(deck);
-
+        Ctx = new BattleContext(player, Enemies, new EnergySystem(3), cardPiles, new ActionQueue());
+        turnManager.Begin(Ctx);
     }
 
     private void SpawnMonsters(int sequenceIndex)

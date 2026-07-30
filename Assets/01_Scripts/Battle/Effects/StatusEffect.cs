@@ -15,8 +15,10 @@ public enum StatusType
 public class StatusEffect : IEffectBase
 {
     [SerializeField] private int stack;
-    [SerializeField] StatusType statusType;
-    [SerializeField] TargetScope scope;
+    [SerializeField] private StatusType statusType;
+    [SerializeField] private TargetScope scope;
+    public TargetScope Scope => scope;
+
     public IEffectAction Set(Character source, Character target)
     {
         Character receiver = (scope == TargetScope.Self) ? source : target;

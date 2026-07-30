@@ -5,7 +5,9 @@ using System;
 public class LoseHpEffect : IEffectBase
 {
     [SerializeField] private int amount;
-    [SerializeField] private TargetScope scope; // 필요할까? 
+    [SerializeField] private TargetScope scope;
+    public TargetScope Scope => scope;
+
     public IEffectAction Set(Character source, Character target)
     {
         Character receiver = (scope == TargetScope.Self) ? source : target;
