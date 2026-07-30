@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -40,20 +41,29 @@ public class GameManager : MonoBehaviour
 
     private void FillStartingDeck(Deck deck)
     {
+        // 기본 카드 사전 배치
         for (int i = 0; i < 2; i++)
         {
             deck.Add(strikeCard);
             deck.Add(defendCard);
         }
+        List<CardData> clonedList = new List<CardData>(cardDataList.CardList);
 
-        for (int i = 0; i < 6; i++)
-        {
-            CardData randomCardData;
-            // 셔플로직실행...? 그냥 랜덤 수로 데이터리스트 인덱스에서 뽑으면 안 될까요? 중복이면 다시 뽑고..
-        }
+
+        // 카드 풀을 복사해서 초기 덱 10장을 채울 때까지 랜덤하게 배분
         while (deck.MyDeck.Count < 10)
         {
+            if (clonedList.Count == 0)
+            {
+                Debug.LogError("카드 후보 풀이 비어 10장을 채울 수 없음");
+                break;
+            }
 
+            int randomIndex = Random.Range(0, clonedList.Count);
+
+            CardData randomCardData = clonedList[randomIndex];
+            deck.Add(randomCardData);
+            clonedList.RemoveAt(randomIndex);
         }
 
 

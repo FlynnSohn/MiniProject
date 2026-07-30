@@ -9,6 +9,7 @@ public class CardPiles
     private readonly List<Card> exhaustPile;
     private readonly List<Card> discardPile;
     private readonly List<Card> drawPile;
+    private readonly List<Card> removedPile;
     private readonly List<Card> hand;
 
     private const int HandLimit = 10;
@@ -18,6 +19,7 @@ public class CardPiles
     public int DrawCount => drawPile.Count;
     public int DiscardCount => discardPile.Count;
     public int ExhaustCount => exhaustPile.Count;
+    public int RemovedCount => removedPile.Count;
 
     public event Action<Card> OnDrawn;
     public event Action OnPilesChanged;
@@ -41,6 +43,7 @@ public class CardPiles
         discardPile = new List<Card>();
         drawPile = new List<Card>();
         hand = new List<Card>();
+        removedPile = new List<Card>();
 
         rand = new Random();
 
@@ -74,18 +77,7 @@ public class CardPiles
         for (int i = hand.Count - 1; i >= 0; i--)
         {
             Card card = hand[i];
-            if (card.Data.Destination == CardDestination.Removed)
-                hand.RemoveAt(i);
-            else if (card.Data.Destination == CardDestination.Exhaust)
-            {
-                Move(card, hand, exhaustPile);
-                hand.RemoveAt(i);
-            }
-            else
-            {
-                Move(card, hand, discardPile);
-                hand.RemoveAt(i);
-            }
+            Move(card, hand, discardPile);
         }
         OnPilesChanged?.Invoke();
     }
@@ -102,6 +94,7 @@ public class CardPiles
             UnityEngine.Debug.LogError("해당 카드가 없습니다.");
         }
     }
+
     private void RefillDrawPile()
     {
         Shuffle(discardPile);
@@ -111,6 +104,7 @@ public class CardPiles
         }
         discardPile.Clear();
     }
+
     private void Shuffle(List<Card> pile)
     {
 
@@ -119,6 +113,62 @@ public class CardPiles
             int randomIndex = rand.Next(0, i + 1);
             (pile[i], pile[randomIndex]) = (pile[randomIndex], pile[i]);
         }
+    }
+
+    public void TakeFromHand(Card card)
+    {
+        if (cardInPlay != null)
+        {
+            UnityEngine.Debug.LogError("이미 플레이 중인 카드가 있습니다.");
+            return;
+        }
+
+
+        cardInPlay = card;
+        hand.Remove(cardInPlay);
+
+
+        OnPilesChanged?.Invoke();
+    }
+    public void ResolveCardInPlay()
+    {
+        switch (cardInPlay.Destination)
+        {
+            case CardDestination.Discard:
+                discardPile.Add(cardInPlay);
+                cardInPlay = null;
+                break;
+            case CardDestination.Exhaust:
+                Exhaust(cardInPlay);
+                cardInPlay = null;
+                break;
+            case CardDestination.Removed:
+                removedPile.Add(cardInPlay);
+                cardInPlay = null;
+                break;
+            default:
+                ;
+                break;
+        }
+    }
+    public void Exhaust(Card card)
+    {
+        if (cardInPlay != null)
+        {
+            UnityEngine.Debug.LogError("이미 플레이 중인 카드가 있습니다.");
+            return;
+        }
+
+        if (cardInPlay == card)
+        {
+            exhaustPile.Add(cardInPlay);
+            cardInPlay = null;
+        }
+        else
+        {
+            Move(card, hand, exhaustPile);
+        }
+
     }
 
 }

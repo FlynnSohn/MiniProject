@@ -32,9 +32,6 @@ public class RunState
         ClearCount++;
         MonsterIndex++;
     }
-    public void StartNewRun()
-    {
-        RunState newRun = new RunState(80);
-    }
+
 
 }
