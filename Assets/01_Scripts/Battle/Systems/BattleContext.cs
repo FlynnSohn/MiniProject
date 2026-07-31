@@ -27,8 +27,6 @@ public class BattleContext
         else if (q == null)
             throw new ArgumentNullException(nameof(q));
 
-
-
         Player = p;
         Enemies = e;
         Energy = en;

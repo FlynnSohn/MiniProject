@@ -17,6 +17,6 @@ public class GainEnergyAction : IEffectAction
 
     public void Execute(BattleContext ctx)
     {
-        source.GainEnergy(energy);
+        ctx.Energy.GainEnergy(energy);
     }
 }

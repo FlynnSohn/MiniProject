@@ -30,7 +30,8 @@ public class Monster : Character
         monsterCollider.size = data.MonsterImage.bounds.size;
 
         nameText.text = data.MonsterName;
-        RefreshHpText();
+
+        OnStatsChanged += RefreshHpText;
 
     }
 

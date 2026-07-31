@@ -12,11 +12,23 @@ public class TurnManager : MonoBehaviour
 
     public void PlayCard(Card card, Character target)
     {
+        int c = card.Cost;
         if (card.NeedsTarget && target == null) return;
-        if (!ctx.Energy.CanAfford(card.Cost)) return;
+        if (!ctx.Energy.CanAfford(c)) return;
         if (!ctx.CardPiles.TakeFromHand(card)) return;
-        ctx.Energy.Spend(card.Cost);
-        //foreach 효과 → Set(player, target) → ctx.EnqueueBack(액션);
+        ctx.Energy.Spend(c);
+
+        foreach (var effect in card.Data.CardEffects)
+        {
+            IEffectAction action = effect.Set(ctx.Player, target);
+            if (action == null)
+            {
+                Debug.LogError($"{card.Data.CardName}효과가 액션을 만들지 못함");
+                continue;
+            }
+            ctx.EnqueueBack(action);
+        }
+
         ctx.RunQueue();
         ctx.CardPiles.ResolveCardInPlay();
     }

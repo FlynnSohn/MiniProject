@@ -30,6 +30,9 @@ public class BattleSetup : MonoBehaviour
 
         Ctx = new BattleContext(player, Enemies, new EnergySystem(3), cardPiles, new ActionQueue());
         turnManager.Begin(Ctx);
+
+        cardPiles.Draw(5);
+        Debug.Log($"손패 {cardPiles.Hand.Count} / 뽑을 {cardPiles.DrawCount}");
     }
 
     private void SpawnMonsters(int sequenceIndex)
@@ -54,9 +57,6 @@ public class BattleSetup : MonoBehaviour
     /// <summary>
     /// 몬스터 중앙 기준 균등 배치
     /// </summary>
-    /// <param name="i"></param>
-    /// <param name="count"></param>
-    /// <returns></returns>
     private Vector2 GetSlotPos(int i, int count)
     {
         float offsetX = (i - (count - 1) / 2f) * spacing;

@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Character : MonoBehaviour
 {
     protected int maxHp;
     protected int currentHp;
     protected int currentDefend = 0; // 실시간 방어력
-    protected int currentEnergy;
+
+
+    public event Action OnStatsChanged;
 
 
     public bool IsDead => currentHp <= 0;
@@ -19,6 +22,7 @@ public class Character : MonoBehaviour
         currentHp = _currentHp;
         statusEffects.Clear();
         currentDefend = 0;
+        OnStatsChanged?.Invoke();
     }
 
     public void DealDamage(int amount)
@@ -28,23 +32,26 @@ public class Character : MonoBehaviour
         currentDefend -= blocked;
         //currentHp -= (amount - blocked);
         currentHp = Mathf.Max(currentHp - (amount - blocked), 0);
-
+        OnStatsChanged?.Invoke();
     }
     public void LoseHp(int amount)
     {
         currentHp = Mathf.Max(currentHp - amount, 0);
+        OnStatsChanged?.Invoke();
     }
     public void HealHp(int amount)
     {
         currentHp = Mathf.Min(currentHp + amount, maxHp);
+        OnStatsChanged?.Invoke();
     }
-    public void DrawCard(int count) { }
-    public void ExhaustCard(GameObject card) { }
+    //public void DrawCard(int count) { }
+    //public void ExhaustCard(GameObject card) { }
     public void GainDefend(int amount)
     {
         currentDefend += amount;
+        OnStatsChanged?.Invoke();
     }
-    public void GainEnergy(int amount) { currentEnergy += amount; }
+    //public void GainEnergy(int amount) { currentEnergy += amount; }
 
 
     // 적용된 상태이상에 동일 상태이상이 있는지 확인해 있으면 스택 값을 더하고 없으면 상태이상을 추가
