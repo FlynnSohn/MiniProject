@@ -16,9 +16,10 @@ MonoBehaviour:
   effectDescription: "\uC774\uBC88 \uD134\uC5D0 \uACF5\uACA9 \uCE74\uB4DC\uB97C \uC0AC\uC6A9\uD560
     \uB54C\uB9C8\uB2E4, \uBC29\uC5B4\uB3C4\uB97C 3 \uC5BB\uC2B5\uB2C8\uB2E4."
   cardType: 1
-  energy: 0
-  exhaustible: 0
+  cost: 0
+  destination: 0
   cardRarity: 2
+  cardImage: {fileID: 5908257470138330340, guid: a53575c8ef4224cce9b7acb0c156086d, type: 3}
   cardEffects:
   - rid: 1044924472748146906
   references:

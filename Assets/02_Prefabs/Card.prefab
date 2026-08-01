@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 2771385234259478127}
   - component: {fileID: 7815626968271792223}
   m_Layer: 0
-  m_Name: EnergyBackground
+  m_Name: CostBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,7 +1122,8 @@ MonoBehaviour:
   cardNameText: {fileID: 1288677305414746331}
   cardEffectText: {fileID: 2459690498500506468}
   cardTypeText: {fileID: 9100519789211231160}
-  cardEnergyText: {fileID: 8462082262234616988}
+  cardCostText: {fileID: 8462082262234616988}
+  frameByType: []
 --- !u!1 &6550012743534373091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1317,7 @@ GameObject:
   - component: {fileID: 1278555474856416197}
   - component: {fileID: 8462082262234616988}
   m_Layer: 0
-  m_Name: EnergyText
+  m_Name: CostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,5 +1,5 @@
-
 using UnityEngine;
+
 
 public class BattleSetup : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] private MonsterSequence monsterSequence;
     [SerializeField] private Player player;
     [SerializeField] private TurnManager turnManager;
+    [SerializeField] private DragHandler dragHandler;
+    [SerializeField] private HandView handView;
 
     [SerializeField] private float spacing = 4f;
     [SerializeField] private Vector2 centerPos = new(4f, -0.5f);
@@ -29,11 +31,21 @@ public class BattleSetup : MonoBehaviour
         cardPiles = new CardPiles(GameManager.instance.Run.Deck);
 
         Ctx = new BattleContext(player, Enemies, new EnergySystem(3), cardPiles, new ActionQueue());
-        turnManager.Begin(Ctx);
 
-        cardPiles.Draw(5);
+        handView.Begin(Ctx);
+        dragHandler.Begin(Ctx);
+        turnManager.Begin(Ctx);
+        turnManager.StartPlayerTurn();
+
+
         Debug.Log($"손패 {cardPiles.Hand.Count} / 뽑을 {cardPiles.DrawCount}");
+        foreach (var c in cardPiles.Hand)
+        {
+            Debug.Log($"카드이름{c.Data.CardName}");
+        }
     }
+
+
 
     private void SpawnMonsters(int sequenceIndex)
     {

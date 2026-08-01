@@ -18,6 +18,7 @@ MonoBehaviour:
   cost: 2
   destination: 1
   cardRarity: 3
+  cardImage: {fileID: 4633077362727470015, guid: 25e809343a7f14ec7bdb53388bb76c44, type: 3}
   cardEffects:
   - rid: 1044924472748146911
   references:

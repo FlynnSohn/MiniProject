@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Character : MonoBehaviour
     protected int currentHp;
     protected int currentDefend = 0; // 실시간 방어력
 
-
+    [SerializeField] protected TextMeshProUGUI hpText;
     public event Action OnStatsChanged;
 
 
@@ -69,7 +70,10 @@ public class Character : MonoBehaviour
     {
 
     }
-
+    public void RefreshHpText()
+    {
+        hpText.text = $"{currentHp}/{maxHp}";
+    }
 
 
     // 딜량, 방어력 등에 현재 적용된 상태이상 값 반영하는 함수

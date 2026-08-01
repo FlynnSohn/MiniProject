@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardName: "\uD0C0\uACA9"
   effectDescription: "\uD53C\uD574\uB97C 6 \uC90D\uB2C8\uB2E4."
-  cardtype: 0
-  energy: 1
-  exhaustible: 0
+  cardType: 0
+  cost: 1
+  destination: 0
   cardRarity: 0
+  cardImage: {fileID: 7573324988477027335, guid: edbfb456d2f72435d8c6a9d27c9b5327, type: 3}
   cardEffects:
   - rid: 1044924472748146897
   references:

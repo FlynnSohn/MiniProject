@@ -10,7 +10,7 @@ public class Monster : Character
     private int patternIndex;
 
     [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] TextMeshProUGUI hpText;
+    //[SerializeField] TextMeshProUGUI hpText;
     private SpriteRenderer sr;
     private BoxCollider2D monsterCollider;
 
@@ -18,6 +18,7 @@ public class Monster : Character
     {
         sr = GetComponent<SpriteRenderer>();
         monsterCollider = GetComponent<BoxCollider2D>();
+        OnStatsChanged += RefreshHpText;
     }
     public void Init(MonsterData data)
     {
@@ -31,17 +32,13 @@ public class Monster : Character
 
         nameText.text = data.MonsterName;
 
-        OnStatsChanged += RefreshHpText;
+
 
     }
 
     /// <summary>
     /// 외부(BattleSetup)에서 지정하는 것들
     /// </summary>
-    public void RefreshHpText()
-    {
-        hpText.text = $"{currentHp}/{maxHp}";
-    }
     public void SetSortingOrder(int order) => sr.sortingOrder = order;
     public override void Die() => gameObject.SetActive(false);
 }

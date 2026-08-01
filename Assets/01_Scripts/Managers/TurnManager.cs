@@ -10,6 +10,22 @@ public class TurnManager : MonoBehaviour
         this.ctx = ctx;
     }
 
+    public void StartPlayerTurn()
+    {
+        ctx.Energy.ResetToDefault();
+        ctx.CardPiles.Draw(5);
+
+    }
+    public void EndPlayerTurn()
+    {
+        ctx.CardPiles.DiscardHand();
+    }
+
+    public void StartEnemyTurn(int enemyIndex)
+    {
+
+    }
+
     public void PlayCard(Card card, Character target)
     {
         int c = card.Cost;

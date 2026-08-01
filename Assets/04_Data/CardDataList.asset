@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: CardDataList
   m_EditorClassIdentifier: Assembly-CSharp::CardDataList
   cardList:
-  - {fileID: 11400000, guid: 2cebfaf11b9ce496fa7d318c62683b46, type: 2}
   - {fileID: 11400000, guid: f84f8e1406354480aaeb87b9ff96ccdc, type: 2}
   - {fileID: 11400000, guid: a466b970a6e8b41a8b04939088cb875b, type: 2}
   - {fileID: 11400000, guid: 137283a8858404adbb0c6124a1eba9a6, type: 2}

@@ -19,6 +19,7 @@ MonoBehaviour:
   cost: 2
   destination: 2
   cardRarity: 3
+  cardImage: {fileID: 7056927939302333880, guid: f70f8a8ba700643e7825bec570bd6c00, type: 3}
   cardEffects:
   - rid: 1044924472748146912
   references:
@@ -28,3 +29,4 @@ MonoBehaviour:
       type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
       data:
         draw: 1
+        scope: 0

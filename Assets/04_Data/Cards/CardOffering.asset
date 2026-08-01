@@ -20,6 +20,7 @@ MonoBehaviour:
   cost: 0
   destination: 1
   cardRarity: 3
+  cardImage: {fileID: -2853688724531134963, guid: 77af51e2491874e62a8ea1e54bcf43ac, type: 3}
   cardEffects:
   - rid: 1044924472748146943
   - rid: 1044924472748146918
@@ -31,10 +32,12 @@ MonoBehaviour:
       type: {class: EnergyEffect, ns: , asm: Assembly-CSharp}
       data:
         energy: 2
+        scope: 0
     - rid: 1044924472748146919
       type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
       data:
         draw: 3
+        scope: 0
     - rid: 1044924472748146943
       type: {class: LoseHpEffect, ns: , asm: Assembly-CSharp}
       data:

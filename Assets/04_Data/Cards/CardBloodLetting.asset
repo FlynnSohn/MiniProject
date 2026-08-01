@@ -16,9 +16,10 @@ MonoBehaviour:
   effectDescription: "\uCCB4\uB825\uC744 3 \uC783\uC2B5\uB2C8\uB2E4. 2 \uC5D0\uB108\uC9C0\uB97C
     \uC5BB\uC2B5\uB2C8\uB2E4."
   cardType: 1
-  energy: 0
-  exhaustible: 0
+  cost: 0
+  destination: 0
   cardRarity: 2
+  cardImage: {fileID: -6690130344894749556, guid: 0e971364a5e0646398260a734519dc72, type: 3}
   cardEffects:
   - rid: 1044924472748146941
   - rid: 1044924472748146914
@@ -29,6 +30,7 @@ MonoBehaviour:
       type: {class: EnergyEffect, ns: , asm: Assembly-CSharp}
       data:
         energy: 2
+        scope: 0
     - rid: 1044924472748146941
       type: {class: LoseHpEffect, ns: , asm: Assembly-CSharp}
       data:

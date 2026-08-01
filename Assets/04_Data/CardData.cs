@@ -1,6 +1,6 @@
 using UnityEngine;
 
-using System;
+
 using System.Collections.Generic;
 
 public enum CardType
@@ -34,6 +34,8 @@ public class CardData : ScriptableObject
     [SerializeField] private int cost;
     [SerializeField] private CardDestination destination;
     [SerializeField] private CardRarity cardRarity;
+    [SerializeField] private Sprite cardImage;
+
 
     public string CardName => cardName;
     public string EffectDescription => effectDescription;
@@ -41,6 +43,7 @@ public class CardData : ScriptableObject
     public int Cost => cost;
     public CardDestination Destination => destination;
     public CardRarity CardRarity => cardRarity;
+    public Sprite CardImage => cardImage;
 
 
 
