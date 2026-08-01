@@ -1028,8 +1028,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5245124631860191765}
   - {fileID: 6953024782560215911}
@@ -1123,7 +1123,19 @@ MonoBehaviour:
   cardEffectText: {fileID: 2459690498500506468}
   cardTypeText: {fileID: 9100519789211231160}
   cardCostText: {fileID: 8462082262234616988}
-  frameByType: []
+  borderByType:
+  - {fileID: -2687165269001822115, guid: e31844208184b4f16869c710838a0b39, type: 3}
+  - {fileID: -5719577875524590342, guid: 83d4d2de352e74a5cbfe773bdf287140, type: 3}
+  - {fileID: -8396376597861409235, guid: 58b22b50d97f246b9aa9bf119afbded3, type: 3}
+  colorByRarity:
+  - {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  - {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
+  - {r: 0.3443396, g: 0.9857466, b: 1, a: 1}
+  - {r: 1, g: 0.8658953, b: 0.2980392, a: 1}
+  rarityTintTargets:
+  - {fileID: 2686990635853369496}
+  - {fileID: 6705762667000124812}
+  - {fileID: 3226650679807060612}
 --- !u!1 &6550012743534373091
 GameObject:
   m_ObjectHideFlags: 0

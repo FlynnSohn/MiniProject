@@ -13,6 +13,7 @@ public class TurnManager : MonoBehaviour
     public void StartPlayerTurn()
     {
         ctx.Energy.ResetToDefault();
+        //ctx.Player.D
         ctx.CardPiles.Draw(5);
 
     }
