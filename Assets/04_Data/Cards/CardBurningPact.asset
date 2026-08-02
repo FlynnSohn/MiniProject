@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
+  m_Name: CardBurningPact
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uBD88\uD0C0\uB294 \uC870\uC57D"
+  effectDescription: "\uCE74\uB4DC\uB97C 1\uC7A5 \uC18C\uBA78\uC2DC\uD0B5\uB2C8\uB2E4.
+    \uCE74\uB4DC\uB97C 2\uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+  cardType: 1
+  cost: 1
+  destination: 0
+  cardRarity: 2
+  cardImage: {fileID: 6078049255525132839, guid: 9d2838eef2a624dfaa51a8a8758e897f, type: 3}
+  cardEffects:
+  - rid: 1044924472748146908
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146908
+      type: {class: DrawEffect, ns: , asm: Assembly-CSharp}
+      data:
+        draw: 2
+        scope: 0

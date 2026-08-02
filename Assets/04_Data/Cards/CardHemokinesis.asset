@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
+  m_Name: CardHemokinesis
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uD608\uB958"
+  effectDescription: "\uCCB4\uB825\uC744 2 \uC783\uC2B5\uB2C8\uB2E4. \uD53C\uD574\uB97C
+    15 \uC90D\uB2C8\uB2E4."
+  cardType: 0
+  cost: 1
+  destination: 0
+  cardRarity: 2
+  cardImage: {fileID: -8991738707749312244, guid: 6882fe4a4a75a4e62b7f473246387b81, type: 3}
+  cardEffects:
+  - rid: 1044924472748146942
+  - rid: 1044924472748146905
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146905
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 15
+        scope: 1
+    - rid: 1044924472748146942
+      type: {class: LoseHpEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 2
+        scope: 0

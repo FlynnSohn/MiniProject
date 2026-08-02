@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
+  m_Name: CardBloodLetting
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uC0AC\uD608"
+  effectDescription: "\uCCB4\uB825\uC744 3 \uC783\uC2B5\uB2C8\uB2E4. 2 \uC5D0\uB108\uC9C0\uB97C
+    \uC5BB\uC2B5\uB2C8\uB2E4."
+  cardType: 1
+  cost: 0
+  destination: 0
+  cardRarity: 2
+  cardImage: {fileID: -6690130344894749556, guid: 0e971364a5e0646398260a734519dc72, type: 3}
+  cardEffects:
+  - rid: 1044924472748146941
+  - rid: 1044924472748146914
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146914
+      type: {class: EnergyEffect, ns: , asm: Assembly-CSharp}
+      data:
+        energy: 2
+        scope: 0
+    - rid: 1044924472748146941
+      type: {class: LoseHpEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 3
+        scope: 0

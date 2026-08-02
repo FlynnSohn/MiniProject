@@ -1,0 +1,58 @@
+using UnityEngine;
+
+
+using System.Collections.Generic;
+
+public enum CardType
+{
+    Attack = 0,
+    Skill = 1,
+    Power = 2
+}
+public enum CardRarity
+{
+    Basic = 0,
+    Common = 1,
+    Uncommon = 2,
+    Rare = 3
+}
+
+public enum CardDestination
+{
+    Discard = 0,
+    Exhaust = 1,
+    Removed = 2
+}
+
+[CreateAssetMenu(fileName = "CardData", menuName = "Card/CardData")]
+public class CardData : ScriptableObject
+{
+    [Header("# Main Info")]
+    [SerializeField] private string cardName;
+    [SerializeField] private string effectDescription;
+    [SerializeField] private CardType cardType;
+    [SerializeField] private int cost;
+    [SerializeField] private CardDestination destination;
+    [SerializeField] private CardRarity cardRarity;
+    [SerializeField] private Sprite cardImage;
+
+
+    public string CardName => cardName;
+    public string EffectDescription => effectDescription;
+    public CardType CardType => cardType;
+    public int Cost => cost;
+    public CardDestination Destination => destination;
+    public CardRarity CardRarity => cardRarity;
+    public Sprite CardImage => cardImage;
+
+
+
+    [SerializeReference, SubclassSelector] private List<IEffectBase> cardEffects = new List<IEffectBase>();
+    // 카드 효과 종류: 데미지 입히기, 에너지 얻기, 방어력 얻기, 카드 소멸시키기, 카드 뽑기
+    // 적용방식: 1회, 이번 턴, 이번 전투 
+
+    public IReadOnlyList<IEffectBase> CardEffects => cardEffects;
+
+}
+
+

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231e2a18109fb48548e89773185429c1, type: 3}
+  m_Name: MonsterAxeRaider
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterData
+  monsterName: "\uB3C4\uB07C \uC2B5\uACA9\uC790"
+  maxHp: 22
+  monsterImage: {fileID: -6312546756000994753, guid: 06d1c8970a5f042b19187ca9d004ec0b, type: 3}
+  monsterType: 0
+  monsterPatterns:
+  - {fileID: 11400000, guid: 167ecc54e2eb54e7c9975215336b60a5, type: 2}
+  - {fileID: 11400000, guid: 167ecc54e2eb54e7c9975215336b60a5, type: 2}
+  - {fileID: 11400000, guid: 309a40540ad064473af764d5b4b3d357, type: 2}

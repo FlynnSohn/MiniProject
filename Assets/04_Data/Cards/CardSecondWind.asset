@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
+  m_Name: CardSecondWind
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uAE30\uC0AC\uD68C\uC0DD"
+  effectDescription: "\uC190\uC5D0 \uC788\uB294 \uACF5\uACA9\uC774 \uC544\uB2CC \uBAA8\uB4E0
+    \uCE74\uB4DC\uB97C \uC18C\uBA78\uC2DC\uD0B5\uB2C8\uB2E4. \uC18C\uBA78\uC2DC\uD0A8
+    \uCE74\uB4DC 1\uC7A5\uB2F9 \uBC29\uC5B4\uB3C4\uB97C 5 \uC5BB\uC2B5\uB2C8\uB2E4."
+  cardType: 1
+  cost: 1
+  destination: 0
+  cardRarity: 2
+  cardImage: {fileID: -7038418863529210405, guid: 8e22a7e06eeed4659ab8a63513f77220, type: 3}
+  cardEffects:
+  - rid: 1044924472748146907
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146907
+      type: {class: DefendEffect, ns: , asm: Assembly-CSharp}
+      data:
+        defend: 5
+        scope: 0

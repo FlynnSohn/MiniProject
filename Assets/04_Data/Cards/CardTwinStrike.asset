@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a4e1470612e40d799d2407d689d1c2, type: 3}
+  m_Name: CardTwinStrike
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardName: "\uC774\uC911 \uD0C0\uACA9"
+  effectDescription: "\uD53C\uD574\uB97C 5\uB9CC\uD07C 2\uBC88 \uC90D\uB2C8\uB2E4."
+  cardType: 0
+  cost: 1
+  destination: 0
+  cardRarity: 1
+  cardImage: {fileID: 4718382371988010224, guid: 0ff8cadb0c5e04727aa45656066867c2, type: 3}
+  cardEffects:
+  - rid: 1044924472748146900
+  - rid: 1044924472748146901
+  references:
+    version: 2
+    RefIds:
+    - rid: 1044924472748146900
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+        scope: 1
+    - rid: 1044924472748146901
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        damage: 5
+        scope: 1
