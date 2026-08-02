@@ -4,22 +4,9 @@ using UnityEngine;
 
 public abstract class StatusEffectBase
 {
+    public abstract StatusType Type { get; }
     public int Stack { get; protected set; }
     public void AddStack(int amount) => Stack += amount;
-
-    // 게임 내내 영구 적용 
-
-    // 해당 전투 동안 영구 적용 -> 그냥 9999턴으로 고정하자.
-
-    // 특정 턴 동안 카운트 1씩 감소해가며 적용
-
-    // 특정 턴 동안 적용
-
-    // 이번 턴 적용
-
-    // 조건부 적용. ~할 때마다
-
-    // 적용 시점에 Characters의 StatusEffects리스트에 추가하고 0되면 제거하기
 
 
     // 지속시간 있는 거

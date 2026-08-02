@@ -6,6 +6,10 @@ public class TurnManager : MonoBehaviour
 
     private BattleContext ctx;
     private bool battleEnded;
+    [SerializeField] private int healOnWin = 6;
+
+    private void GoNext() => GameManager.instance.NextBattle();
+    private void GoTitle() => GameManager.instance.GameOver();
 
     public void Begin(BattleContext ctx)
     {
@@ -15,6 +19,8 @@ public class TurnManager : MonoBehaviour
     public void StartPlayerTurn()
     {
         if (battleEnded) return;
+
+        foreach (Monster m in ctx.Enemies.Monsters) m.DecideIntent();
 
         ctx.Player.ResetDefend(); // 방어도 리셋
         ctx.Player.TurnStart(ctx);
@@ -41,16 +47,27 @@ public class TurnManager : MonoBehaviour
 
     public void StartEnemyTurn()
     {
-        List<Monster> aliveMonsters = new List<Monster>(ctx.Enemies.GetAliveMonsters());
+        //List<Monster> aliveMonsters = new List<Monster>(ctx.Enemies.GetAliveMonsters());
 
-        foreach (Monster m in aliveMonsters)
+        foreach (Monster m in new List<Monster>(ctx.Enemies.GetAliveMonsters()))
         {
             if (m.IsDead) continue;
             m.ResetDefend();
             m.TurnStart(ctx);
-            // 예고 의도 실행
+
+        }
+        ctx.RunQueue();
+        CheckBattleEnd();
+        if (battleEnded) return;
+
+        foreach (Monster m in new List<Monster>(ctx.Enemies.GetAliveMonsters()))
+        {
+            if (m.IsDead) continue;
+            m.ActOnIntent(ctx);
+
             m.TurnEnd(ctx);
         }
+
         ctx.RunQueue();
         CheckBattleEnd();
         if (battleEnded) return;
@@ -91,19 +108,26 @@ public class TurnManager : MonoBehaviour
     {
         battleEnded = true;
         RunState run = GameManager.instance.Run;
-        run.SetHp(ctx.Player.CurrentHp);
+
 
         if (won)
         {
+            run.SetHp(ctx.Player.CurrentHp + healOnWin);
             run.OnBattleCleared();
             run.AddGold(15);
+            run.ShowScore(run.ClearCount);
             Debug.Log($"승리! 클리어 횟수: {run.ClearCount}");
+            Invoke(nameof(GoNext), 1.5f);
+
             // 보상화면 -> 다음 전투
         }
         else
         {
+            run.SetHp(0);
+            run.ShowScore(run.ClearCount);
             Debug.Log($"게임오버! 최종 점수: {run.ClearCount}");
             // 결과 화면
+            Invoke(nameof(GoTitle), 1.5f);
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 public class WeakStatus : StatusEffectBase
 {
     // 약화: 공격력 25%p 감소
+    public override StatusType Type => StatusType.Weak;
     public WeakStatus(int amount)
     {
         Stack = amount;

@@ -37,5 +37,15 @@ public class Enemies
             }
         }
     }
-    public bool AllMonstersDead => GetAliveMonsters().Count == 0;
+    public bool AllMonstersDead
+    {
+        get
+        {
+            foreach (Monster m in monsters)
+            {
+                if (!m.IsDead) return false;
+            }
+            return true;
+        }
+    }
 }

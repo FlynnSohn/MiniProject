@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IntentResolver : MonoBehaviour
+public class StatusIconView : MonoBehaviour
 {
 
     void Start()

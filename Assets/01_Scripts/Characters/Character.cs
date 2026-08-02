@@ -20,7 +20,8 @@ public class Character : MonoBehaviour
     public bool IsDead => currentHp <= 0;
 
     private List<StatusEffectBase> statusEffects = new();
-    //public IReadOnlyList<StatusEffectBase> StatusEffects => statusEffects;
+    public IReadOnlyList<StatusEffectBase> StatusEffects => statusEffects;
+
     protected void InitStats(int _maxHp, int _currentHp)
     {
         maxHp = _maxHp;
@@ -80,10 +81,14 @@ public class Character : MonoBehaviour
         StatusEffectBase existing = statusEffects.Find(s => s.GetType() == newStatus.GetType());
         if (existing != null) existing.AddStack(newStatus.Stack);
         else statusEffects.Add(newStatus);
+
+        OnStatsChanged?.Invoke();
     }
     public void RemoveStatus(StatusEffectBase statusEffect)
     {
         statusEffects.Remove(statusEffect);
+
+        OnStatsChanged?.Invoke();
     }
     public virtual void Die()
     {

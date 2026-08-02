@@ -3,7 +3,7 @@
 public class StrengthStatus : StatusEffectBase
 {
     // 데미지 계산할 때 특정 값만큼 증감
-
+    public override StatusType Type => StatusType.Strength;
     public StrengthStatus(int amount)
     {
         Stack = amount;

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI discardCountText;
     [SerializeField] private TextMeshProUGUI exhaustCountText;
     [SerializeField] private TextMeshProUGUI goldText;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private EnergySystem energy;
     private CardPiles cardPiles;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
         RefreshEnergy();
         RefreshPiles();
         goldText.text = GameManager.instance.Run.Gold.ToString();
+        scoreText.text = GameManager.instance.Run.Score.ToString();
     }
 
     private void OnDestroy()

@@ -41,10 +41,7 @@ public class BattleSetup : MonoBehaviour
 
 
         Debug.Log($"손패 {cardPiles.Hand.Count} / 뽑을 {cardPiles.DrawCount}");
-        foreach (var c in cardPiles.Hand)
-        {
-            Debug.Log($"카드이름{c.Data.CardName}");
-        }
+
     }
 
 

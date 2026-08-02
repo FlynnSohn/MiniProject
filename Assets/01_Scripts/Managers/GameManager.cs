@@ -1,15 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public void NextBattle() => SceneManager.LoadScene("BattleScene");
+    public void GameOver() => SceneManager.LoadScene("TitleScene");
     private RunState runState;
-    /// <summary>
-    /// 지연 생성
-    /// </summary>
+
+    // 지연 생성
     public RunState Run => runState ??= CreateRun();
     // Runstate는 기본적으로 게임매니저에서 접근
 
@@ -37,6 +39,12 @@ public class GameManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void StartGame()
+    {
+        StartNewRun();
+        NextBattle();
     }
 
     private void FillStartingDeck(Deck deck)
