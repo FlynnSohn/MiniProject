@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
-using TMPro;
+//
+
 
 
 public class Monster : Character
@@ -9,8 +9,9 @@ public class Monster : Character
     private IReadOnlyList<MonsterPatternData> monsterPatternData;
     private int patternIndex;
 
-    [SerializeField] TextMeshProUGUI nameText;
+    //[SerializeField] TextMeshProUGUI nameText;
     //[SerializeField] TextMeshProUGUI hpText;
+    [SerializeField] private CharacterView characterView;
     private SpriteRenderer sr;
     private BoxCollider2D monsterCollider;
 
@@ -18,7 +19,7 @@ public class Monster : Character
     {
         sr = GetComponent<SpriteRenderer>();
         monsterCollider = GetComponent<BoxCollider2D>();
-        OnStatsChanged += RefreshHpText;
+        //OnStatsChanged += RefreshHpText;
     }
     public void Init(MonsterData data)
     {
@@ -30,9 +31,8 @@ public class Monster : Character
         sr.sprite = data.MonsterImage;
         monsterCollider.size = data.MonsterImage.bounds.size;
 
-        nameText.text = data.MonsterName;
-
-
+        //nameText.text = data.MonsterName;
+        characterView.SetName(data.MonsterName);
 
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using TMPro;
+
 
 public class Character : MonoBehaviour
 {
@@ -9,7 +9,11 @@ public class Character : MonoBehaviour
     protected int currentHp;
     protected int currentDefend = 0; // 실시간 방어력
 
-    [SerializeField] protected TextMeshProUGUI hpText;
+    public int MaxHp => maxHp;
+    public int CurrentHp => currentHp;
+    public int CurrentDefend => currentDefend;
+
+    //[SerializeField] protected TextMeshProUGUI hpText;
     public event Action OnStatsChanged;
 
 
@@ -24,6 +28,21 @@ public class Character : MonoBehaviour
         statusEffects.Clear();
         currentDefend = 0;
         OnStatsChanged?.Invoke();
+    }
+    public void ResetDefend()
+    {
+        currentDefend = 0;
+        OnStatsChanged?.Invoke();
+    }
+    public void TurnStart(BattleContext ctx)
+    {
+        for (int i = statusEffects.Count - 1; i >= 0; i--)
+            statusEffects[i].OnTurnStart(this, ctx);
+    }
+    public void TurnEnd(BattleContext ctx)
+    {
+        for (int i = statusEffects.Count - 1; i >= 0; i--)
+            statusEffects[i].OnTurnEnd(this, ctx);
     }
 
     public void DealDamage(int amount)
@@ -70,10 +89,10 @@ public class Character : MonoBehaviour
     {
 
     }
-    public void RefreshHpText()
-    {
-        hpText.text = $"{currentHp}/{maxHp}";
-    }
+    // public void RefreshHpText()
+    // {
+    //     hpText.text = $"{currentHp}/{maxHp}";
+    // }
 
 
     // 딜량, 방어력 등에 현재 적용된 상태이상 값 반영하는 함수

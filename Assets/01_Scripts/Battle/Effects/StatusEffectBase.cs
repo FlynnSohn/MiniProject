@@ -23,8 +23,8 @@ public abstract class StatusEffectBase
 
 
     // 지속시간 있는 거
-    public virtual void OnTurnStart(Character owner) { } // 중독 실행, 취약 카운트 감소 등
-    public virtual void OnTurnEnd(Character owner) { } // 조건이 '이번 턴만'인 것들의 효과를 제거
+    public virtual void OnTurnStart(Character owner, BattleContext ctx) { } // 중독 실행, 취약 카운트 감소 등
+    public virtual void OnTurnEnd(Character owne, BattleContext ctx) { } // 조건이 '이번 턴만'인 것들의 효과를 제거
 
 
     // 값을 더하는거 -> 힘 민첩 등
@@ -38,9 +38,9 @@ public abstract class StatusEffectBase
     public virtual float GetDefendGainedMultiplier() => 1f; // 이것도 지금 안 쓰는듯
 
     // 조건부
-    public virtual void OnCardExhausted(Character owner) { } // 카드 소멸 조건부 어둠의 포옹 등
-    public virtual void OnOwnerAttacked(Character owner, Character attacker) { } // 반격
-    public virtual void OnCardPlayed(CardData card, Character owner) { } // 격노, 카드를 사용할 때마다
+    public virtual void OnCardExhausted(Character owner, BattleContext ctx) { } // 카드 소멸 조건부 어둠의 포옹 등
+    public virtual void OnOwnerAttacked(Character owner, Character attacker, BattleContext ctx) { } // 반격
+    public virtual void OnCardPlayed(CardData card, Character owner, BattleContext ctx) { } // 격노, 카드를 사용할 때마다
 
 
 

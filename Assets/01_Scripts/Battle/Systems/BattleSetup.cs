@@ -9,6 +9,7 @@ public class BattleSetup : MonoBehaviour
     [SerializeField] private TurnManager turnManager;
     [SerializeField] private DragHandler dragHandler;
     [SerializeField] private HandView handView;
+    [SerializeField] private UIManager uiManager;
 
     [SerializeField] private float spacing = 4f;
     [SerializeField] private Vector2 centerPos = new(4f, -0.5f);
@@ -32,6 +33,7 @@ public class BattleSetup : MonoBehaviour
 
         Ctx = new BattleContext(player, Enemies, new EnergySystem(3), cardPiles, new ActionQueue());
 
+        uiManager.Begin(Ctx);
         handView.Begin(Ctx);
         dragHandler.Begin(Ctx);
         turnManager.Begin(Ctx);

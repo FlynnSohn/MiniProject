@@ -1,14 +1,10 @@
 using UnityEngine;
-using TMPro;
+
 
 public class Player : Character
 {
     //[SerializeField] TextMeshProUGUI hpText;
     // protected int maxEnergy;
-    void Awake()
-    {
-        OnStatsChanged += RefreshHpText;
-    }
 
     public void Init(RunState state)
     {

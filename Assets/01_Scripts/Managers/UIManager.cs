@@ -1,28 +1,43 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
-    private void Awake()
+
+    [SerializeField] private TextMeshProUGUI energyText;
+    [SerializeField] private TextMeshProUGUI drawCountText;
+    [SerializeField] private TextMeshProUGUI discardCountText;
+    [SerializeField] private TextMeshProUGUI exhaustCountText;
+    [SerializeField] private TextMeshProUGUI goldText;
+
+    private EnergySystem energy;
+    private CardPiles cardPiles;
+
+    public void Begin(BattleContext ctx)
     {
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        energy = ctx.Energy;
+        cardPiles = ctx.CardPiles;
+
+        energy.OnChanged += RefreshEnergy;
+        cardPiles.OnPilesChanged += RefreshPiles;
+
+        RefreshEnergy();
+        RefreshPiles();
+        goldText.text = GameManager.instance.Run.Gold.ToString();
     }
 
-    void Start()
+    private void OnDestroy()
     {
-
+        if (energy != null) energy.OnChanged -= RefreshEnergy;
+        if (cardPiles != null) cardPiles.OnPilesChanged -= RefreshPiles;
     }
 
-
-    void Update()
+    private void RefreshEnergy() => energyText.text = energy.CurrentEnergy.ToString();
+    private void RefreshPiles()
     {
-
+        drawCountText.text = cardPiles.DrawCount.ToString();
+        discardCountText.text = cardPiles.DiscardCount.ToString();
+        exhaustCountText.text = cardPiles.ExhaustCount.ToString();
     }
+
 }

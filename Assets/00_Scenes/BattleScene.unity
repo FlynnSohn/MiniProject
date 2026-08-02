@@ -1188,12 +1188,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584666517}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1966289176}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &584666519
 MonoBehaviour:
@@ -1207,6 +1207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ec7089b586640e1bc3456ae7cc57ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  energyText: {fileID: 0}
+  drawCountText: {fileID: 0}
+  discardCountText: {fileID: 0}
+  exhaustCountText: {fileID: 0}
+  goldText: {fileID: 0}
 --- !u!1 &600530945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,17 +1675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9327d4c424d564f67bb5189927e109ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
---- !u!114 &770286078 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8587557641075952748, guid: 3f66b38fe804540cab9013edbd21ea15, type: 3}
-  m_PrefabInstance: {fileID: 172067648789985059}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &776935519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2035,7 @@ MonoBehaviour:
   turnManager: {fileID: 504533407}
   dragHandler: {fileID: 400734749}
   handView: {fileID: 310071035}
+  uiManager: {fileID: 0}
   spacing: 4
   centerPos: {x: 4, y: -0.5}
   baseSortingOrder: 300
@@ -2325,6 +2320,7 @@ GameObject:
   - component: {fileID: 1034209690}
   - component: {fileID: 1034209689}
   - component: {fileID: 1034209691}
+  - component: {fileID: 1034209692}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2419,7 +2415,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1990da738634f02b34853b464983f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  hpText: {fileID: 770286078}
+--- !u!114 &1034209692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034209688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a379469bf3374ad79c03cea2a790413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterView
+  character: {fileID: 0}
+  hpText: {fileID: 0}
+  hpSlider: {fileID: 0}
+  nameText: {fileID: 0}
+  defendRoot: {fileID: 0}
+  defendText: {fileID: 0}
 --- !u!1 &1062544838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3054,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1381320317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 504533407}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: EndPlayerTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1381320317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4073,7 +4098,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 584666518}
   - {fileID: 719803843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4592,6 +4616,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1966289176}
+  - {fileID: 584666518}
   - {fileID: 2120017251}
   - {fileID: 1489995380}
   - {fileID: 834490169}

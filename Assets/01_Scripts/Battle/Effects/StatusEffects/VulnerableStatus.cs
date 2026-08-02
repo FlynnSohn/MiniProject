@@ -10,7 +10,7 @@ public class VulnerableStatus : StatusEffectBase
     }
     //public override int ChangeDamageReceived(int dmg) => (int)(dmg * 1.5f);
     public override float GetDamageReceivedMultiplier() => 1.5f;
-    public override void OnTurnStart(Character owner)
+    public override void OnTurnStart(Character owner, BattleContext ctx)
     {
         Stack--;
         if (Stack <= 0) owner.RemoveStatus(this);
